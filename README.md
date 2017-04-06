@@ -1,3 +1,7 @@
+# Extract
+
+AKA Jbuilder Lite
+
 Given some cats:
 
 ```rb
@@ -5,7 +9,11 @@ class Cat
   attr_accessor :id, :name, :secret, :mama, :siblings
 
   def initialize(id:, name:, secret:, mama: nil, siblings: [])
-    @id, @name, @secret, @mama, @siblings = id, name, secret, mama, siblings
+    @id = id
+    @name = name
+    @secret = secret
+    @mama = mama
+    @siblings = siblings
   end
 end
 
@@ -14,7 +22,7 @@ kitty  = Cat.new(id: 2, name: "Sennacy", secret: "I'm a dog", mama: mama)
 kitty2 = Cat.new(id: 3, name: "Marvok", secret: "I can't meow", mama: mama, siblings: [kitty])
 ```
 
-we can extract spcific attributes and format as we please:
+we can extract specific attributes:
 
 ```rb
 Extract.call do
